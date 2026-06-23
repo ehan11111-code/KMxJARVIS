@@ -7,6 +7,7 @@ import type { Locale } from '@/i18n/routing'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { ClientProvider } from '@/components/ClientProvider'
 import { AssistantProvider } from '@/components/assistant/AssistantProvider'
+import { Analytics } from '@vercel/analytics/next'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' })
 const manrope = Manrope({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-display', display: 'swap' })
@@ -48,6 +49,7 @@ export default async function LocaleLayout({
             </ClientProvider>
           </NextIntlClientProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
